@@ -16,41 +16,83 @@ kedi ve köpek görüntülerinin sınıflandırılması amaçlanmıştır.
 - Google Colab
 - Convolutional Neural Network (CNN)
 
-## Veri Seti
-Projede Kaggle platformunda yer alan **Cats vs Dogs** veri seti kullanılmıştır.
-Veri seti, kedi ve köpek görüntülerinden oluşmaktadır.
+Kedi ve Köpek Görüntü Sınıflandırma (Cats vs Dogs)
+📌 Proje Açıklaması
 
-Veri seti klasör yapısı:
+Bu projede, Cats vs Dogs görüntü veri seti kullanılarak bir Evrişimsel Sinir Ağı (CNN) modeli geliştirilmiştir.
+Amaç, verilen bir görüntünün kedi mi yoksa köpek mi olduğunu otomatik olarak sınıflandırmaktır.
 
-cats_vs_dogs  
-└── PetImages  
-&nbsp;&nbsp;&nbsp;&nbsp;├── Cat  
-&nbsp;&nbsp;&nbsp;&nbsp;└── Dog  
+Model eğitimi TensorFlow ve Keras kütüphaneleri kullanılarak gerçekleştirilmiş, eğitim süreci ve başarı metrikleri detaylı olarak analiz edilmiştir.
 
-Veri seti Google Drive üzerinden Google Colab ortamına bağlanarak kullanılmıştır.
+📂 Veri Seti Açıklaması
 
-## Model Mimarisi
-Model, aşağıdaki katmanlardan oluşmaktadır:
-- Rescaling
-- 3 adet Conv2D + MaxPooling katmanı
-- Flatten katmanı
-- Dense (128 nöron)
-- Dense (1 nöron, Sigmoid aktivasyonu)
+Veri seti: Kaggle – Cats vs Dogs Dataset
 
-Kayıp fonksiyonu olarak **Binary Crossentropy**,
-optimizer olarak **Adam** kullanılmıştır.
+Toplam görüntü sayısı: 24,992
 
-## Eğitim Süreci
-Model Google Colab ortamında eğitilmiştir.
-Eğitim sırasında doğruluk (accuracy) ve kayıp (loss) değerleri izlenmiştir.
-Eğitim ve doğrulama sonuçları grafiklerle görselleştirilmiştir.
+Sınıflar:
 
-## Sonuç
-Elde edilen sonuçlar, modelin kedi ve köpek görüntülerini ayırt edebildiğini
-göstermektedir. Eğitim ve doğrulama metrikleri, modelin temel sınıflandırma
-görevini yerine getirdiğini ortaya koymaktadır.
+Cat
 
-## Not
-Eğitilmiş model dosyası (`.h5`), GitHub dosya boyutu sınırını aştığı için
-repository içerisine eklenmemiştir. Model eğitimi Google Colab üzerinde
-gerçekleştirilmiştir.
+Dog
+
+Eğitim / Doğrulama oranı:
+
+%80 Eğitim
+
+%20 Doğrulama
+
+Görüntü boyutu: 150 × 150 RGB
+
+Eğitim öncesinde bozuk (truncated) görüntüler tespit edilerek veri setinden temizlenmiştir.
+
+🏗️ Model Mimarisi
+
+Bu projede kullanılan model Convolutional Neural Network (CNN) mimarisine sahiptir.
+
+Katmanlar:
+
+Input Layer (150×150×3)
+
+Rescaling (1/255)
+
+Conv2D (32 filtre, ReLU)
+
+MaxPooling2D
+
+Conv2D (64 filtre, ReLU)
+
+MaxPooling2D
+
+Conv2D (128 filtre, ReLU)
+
+MaxPooling2D
+
+Flatten
+
+Dense (128, ReLU)
+
+Dense (1, Sigmoid)
+
+Derleme Ayarları:
+
+Optimizer: Adam
+
+Loss Function: Binary Crossentropy
+
+Metric: Accuracy
+
+📊 Eğitim Sonuçları ve Başarı Metrikleri
+
+Model 5 epoch boyunca eğitilmiştir.
+
+Eğitim Doğruluğu (Accuracy): %91
+
+Doğrulama Doğruluğu (Validation Accuracy): %81
+
+Model, eğitim verisi üzerinde yüksek başarı elde etmiş, doğrulama verisinde ise kabul edilebilir bir genelleme performansı göstermiştir.
+
+✅ Sonuç
+
+Bu projede, CNN tabanlı bir derin öğrenme modeli kullanılarak kedi ve köpek görüntülerinin başarılı bir şekilde sınıflandırılması sağlanmıştır.
+Elde edilen sonuçlar, sinir ağlarının görüntü işleme problemlerinde etkinliğini açıkça göstermektedir.
