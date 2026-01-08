@@ -96,3 +96,9 @@ Model, eğitim verisi üzerinde yüksek başarı elde etmiş, doğrulama verisin
 
 Bu projede, CNN tabanlı bir derin öğrenme modeli kullanılarak kedi ve köpek görüntülerinin başarılı bir şekilde sınıflandırılması sağlanmıştır.
 Elde edilen sonuçlar, sinir ağlarının görüntü işleme problemlerinde etkinliğini açıkça göstermektedir.
+⚠️ Not: Eğitilmiş model dosyası (`.keras`) dosya boyutu nedeniyle GitHub’a yüklenememiştir.
+Model, aşağıdaki Google Drive bağlantısı üzerinden erişilebilir durumdadır.
+
+📎 Model Linki (Google Drive):
+[https://drive.google.com/......](https://drive.google.com/file/d/12CYod0p9BteU529Pcc4noT1hboF-nU_B/view?usp=sharing)
+
